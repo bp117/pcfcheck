@@ -1,0 +1,21 @@
+---
+applications:
+  - name: my-task-simulation-app
+    memory: 512M
+    instances: 1
+    env:
+      VCAP_SERVICES: >
+        {
+          "user-provided": [
+            {
+              "name": "my-postgres-service",
+              "credentials": {
+                "host": "mydb.fake.cloud",
+                "port": 5432,
+                "name": "postgres",
+                "username": "dbuser",
+                "password": "dbpassword"
+              }
+            }
+          ]
+        }
